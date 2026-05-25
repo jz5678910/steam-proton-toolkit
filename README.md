@@ -29,12 +29,12 @@ Download and run the `setup-steam-toolkit.sh` to setup your environment.
   * **Shortcut:** `dlssoverridetest %command%`
   * **Command:** `PROTON_ENABLE_NVAPI=1 PROTON_ENABLE_NGX_UPDATER=0 DXVK_NVAPI_DRS_SETTINGS="NGX_DLSS_SR_OVERRIDE=on,NGX_DLSS_RR_OVERRIDE=on,NGX_DLSS_FG_OVERRIDE=on,NGX_DLSS_SR_OVERRIDE_RENDER_PRESET_SELECTION=render_preset_default" DXVK_NVAPI_SET_NGX_DEBUG_OPTIONS="DLSSIndicator=1024,DLSSGIndicator=2" %command%`
 
-* **Native Wayland HDR Only**
+* **Native Wayland HDR**
   * **Description:** Skips XWayland translation filters to unlock native high-dynamic-range color spaces and rendering options inside supported game engines.
   * **Shortcut:** `hdr %command%`
   * **Command:** `PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 %command%`
 
-* **Driver-Level Smooth Motion Only**
+* **Driver-Level Smooth Motion**
   * **Description:** Injects NVIDIA driver-level frame interpolation directly into the Vulkan render path to increase visual fluidness on high-refresh-rate displays.
   * **Shortcut:** `smooth %command%`
   * **Command:** `NVPRESENT_ENABLE_SMOOTH_MOTION=1 %command%`
