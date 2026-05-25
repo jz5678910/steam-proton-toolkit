@@ -7,6 +7,8 @@ Tested on Fedora 44.
 ## Installation
 Download and run the `setup-steam-toolkit.sh` to setup your environment.
 
+To remove, download and run the `uninstall-steam-toolkit.sh`
+
 ## Core Commands
 
 * **DLSS Upgrade**
