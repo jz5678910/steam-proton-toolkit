@@ -10,24 +10,24 @@ Download and run the `setup-steam-toolkit.sh` to setup your environment.
 ## Core Commands
 
 * **DLSS Upgrade**
-  * **Description:** Pulls the latest DLSS models dynamically from NVIDIA's servers, applies dynamic quality presets, and forces the debug text indicators off.
+  * **Description:** Pulls the latest DLSS models dynamically from NVIDIA's servers. Applies the latest dynamic quality presets for both Super Resolution and Ray Reconstruction, and forces the debug text indicators off.
   * **Shortcut:** `dlss %command%`
-  * **Command:** `PROTON_ENABLE_NVAPI=1 PROTON_ENABLE_NGX_UPDATER=1 DXVK_NVAPI_DRS_SETTINGS="NGX_DLSS_SR_OVERRIDE=on,NGX_DLSS_RR_OVERRIDE=on,NGX_DLSS_FG_OVERRIDE=on,NGX_DLSS_SR_OVERRIDE_RENDER_PRESET_SELECTION=render_preset_default" DXVK_NVAPI_SET_NGX_DEBUG_OPTIONS="DLSSIndicator=0,DLSSGIndicator=0" %command%`
+  * **Command:** `PROTON_ENABLE_NVAPI=1 PROTON_ENABLE_NGX_UPDATER=1 DXVK_NVAPI_DRS_SETTINGS="NGX_DLSS_SR_OVERRIDE=on,NGX_DLSS_RR_OVERRIDE=on,NGX_DLSS_FG_OVERRIDE=on,NGX_DLSS_SR_OVERRIDE_RENDER_PRESET_SELECTION=render_preset_latest,NGX_DLSS_RR_OVERRIDE_RENDER_PRESET_SELECTION=render_preset_latest" DXVK_NVAPI_SET_NGX_DEBUG_OPTIONS="DLSSIndicator=0,DLSSGIndicator=0" %command%`
 
 * **DLSS Upgrade + Version HUD**
-  * **Description:** Pulls the latest DLSS models dynamically from NVIDIA's servers, while displaying the version HUD to verify that the file hooked successfully.
+  * **Description:** Pulls the latest DLSS models dynamically from NVIDIA's servers and applies modern Super Resolution and Ray Reconstruction presets, while displaying the version HUD to verify that the files hooked successfully.
   * **Shortcut:** `dlsstest %command%`
-  * **Command:** `PROTON_ENABLE_NVAPI=1 PROTON_ENABLE_NGX_UPDATER=1 DXVK_NVAPI_DRS_SETTINGS="NGX_DLSS_SR_OVERRIDE=on,NGX_DLSS_RR_OVERRIDE=on,NGX_DLSS_FG_OVERRIDE=on,NGX_DLSS_SR_OVERRIDE_RENDER_PRESET_SELECTION=render_preset_default" DXVK_NVAPI_SET_NGX_DEBUG_OPTIONS="DLSSIndicator=1024,DLSSGIndicator=2" %command%`
+  * **Command:** `PROTON_ENABLE_NVAPI=1 PROTON_ENABLE_NGX_UPDATER=1 DXVK_NVAPI_DRS_SETTINGS="NGX_DLSS_SR_OVERRIDE=on,NGX_DLSS_RR_OVERRIDE=on,NGX_DLSS_FG_OVERRIDE=on,NGX_DLSS_SR_OVERRIDE_RENDER_PRESET_SELECTION=render_preset_latest,NGX_DLSS_RR_OVERRIDE_RENDER_PRESET_SELECTION=render_preset_latest" DXVK_NVAPI_SET_NGX_DEBUG_OPTIONS="DLSSIndicator=1024,DLSSGIndicator=2" %command%`
 
 * **Manual DLSS Override**
-  * **Description:** Disables the online server updater to force Proton to read a custom local nvngx_dlss.dll file manually placed inside the game folder, with the HUD hidden.
+  * **Description:** Disables the online server updater to force Proton to read custom local nvngx_dlss.dll and nvngx_dlssg.dll files manually placed inside the game folder. Forces the latest presets for Super Resolution and Ray Reconstruction with the HUD hidden.
   * **Shortcut:** `dlssoverride %command%`
-  * **Command:** `PROTON_ENABLE_NVAPI=1 PROTON_ENABLE_NGX_UPDATER=0 DXVK_NVAPI_DRS_SETTINGS="NGX_DLSS_SR_OVERRIDE=on,NGX_DLSS_RR_OVERRIDE=on,NGX_DLSS_FG_OVERRIDE=on,NGX_DLSS_SR_OVERRIDE_RENDER_PRESET_SELECTION=render_preset_default" DXVK_NVAPI_SET_NGX_DEBUG_OPTIONS="DLSSIndicator=0,DLSSGIndicator=0" %command%`
+  * **Command:** `PROTON_ENABLE_NVAPI=1 PROTON_ENABLE_NGX_UPDATER=0 DXVK_NVAPI_DRS_SETTINGS="NGX_DLSS_SR_OVERRIDE=on,NGX_DLSS_RR_OVERRIDE=on,NGX_DLSS_FG_OVERRIDE=on,NGX_DLSS_SR_OVERRIDE_RENDER_PRESET_SELECTION=render_preset_latest,NGX_DLSS_RR_OVERRIDE_RENDER_PRESET_SELECTION=render_preset_latest" DXVK_NVAPI_SET_NGX_DEBUG_OPTIONS="DLSSIndicator=0,DLSSGIndicator=0" %command%`
 
 * **Manual DLSS Override + Version HUD**
-  * **Description:** Disables the online server updater to force Proton to read a custom local nvngx_dlss.dll file manually placed inside the game folder, while displaying the version HUD to verify that the file hooked successfully.
+  * **Description:** Disables the online server updater to force Proton to read local game folder DLL files, forcing the latest presets for Super Resolution and Ray Reconstruction while displaying the version HUD to verify the handshake.
   * **Shortcut:** `dlssoverridetest %command%`
-  * **Command:** `PROTON_ENABLE_NVAPI=1 PROTON_ENABLE_NGX_UPDATER=0 DXVK_NVAPI_DRS_SETTINGS="NGX_DLSS_SR_OVERRIDE=on,NGX_DLSS_RR_OVERRIDE=on,NGX_DLSS_FG_OVERRIDE=on,NGX_DLSS_SR_OVERRIDE_RENDER_PRESET_SELECTION=render_preset_default" DXVK_NVAPI_SET_NGX_DEBUG_OPTIONS="DLSSIndicator=1024,DLSSGIndicator=2" %command%`
+  * **Command:** `PROTON_ENABLE_NVAPI=1 PROTON_ENABLE_NGX_UPDATER=0 DXVK_NVAPI_DRS_SETTINGS="NGX_DLSS_SR_OVERRIDE=on,NGX_DLSS_RR_OVERRIDE=on,NGX_DLSS_FG_OVERRIDE=on,NGX_DLSS_SR_OVERRIDE_RENDER_PRESET_SELECTION=render_preset_latest,NGX_DLSS_RR_OVERRIDE_RENDER_PRESET_SELECTION=render_preset_latest" DXVK_NVAPI_SET_NGX_DEBUG_OPTIONS="DLSSIndicator=1024,DLSSGIndicator=2" %command%`
 
 * **Native Wayland HDR**
   * **Description:** Skips XWayland translation filters to unlock native high-dynamic-range color spaces and rendering options inside supported game engines.
