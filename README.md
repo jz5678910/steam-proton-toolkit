@@ -1,6 +1,6 @@
 # Steam Proton UI Environment Shortcut Toolkit
 
-A lightweight configuration utility script that sets up ultra-short environment commands inside `/usr/local/bin/` for the Steam Launch Options UI.
+A lightweight configuration utility script that sets up ultra-short environment commands inside `/usr/bin/` for the Steam Launch Options UI.
 
 Tested on Fedora 44.
 
