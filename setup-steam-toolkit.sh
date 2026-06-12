@@ -6,10 +6,10 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-echo "Creating Steam UI script shortcuts in /usr/local/bin/..."
+echo "Creating Steam UI script shortcuts in /usr/bin/..."
 
 # 1. dlss
-cat << 'EOF' > /usr/local/bin/dlss
+cat << 'EOF' > /usr/bin/dlss
 #!/usr/bin/bash
 export PROTON_ENABLE_NVAPI=1
 export PROTON_ENABLE_NGX_UPDATER=1
@@ -19,7 +19,7 @@ exec "$@"
 EOF
 
 # 2. dlsstest
-cat << 'EOF' > /usr/local/bin/dlsstest
+cat << 'EOF' > /usr/bin/dlsstest
 #!/usr/bin/bash
 export PROTON_ENABLE_NVAPI=1
 export PROTON_ENABLE_NGX_UPDATER=1
@@ -29,7 +29,7 @@ exec "$@"
 EOF
 
 # 3. dlssoverride
-cat << 'EOF' > /usr/local/bin/dlssoverride
+cat << 'EOF' > /usr/bin/dlssoverride
 #!/usr/bin/bash
 export PROTON_ENABLE_NVAPI=1
 export PROTON_ENABLE_NGX_UPDATER=0
@@ -39,7 +39,7 @@ exec "$@"
 EOF
 
 # 4. dlssoverridetest
-cat << 'EOF' > /usr/local/bin/dlssoverridetest
+cat << 'EOF' > /usr/bin/dlssoverridetest
 #!/usr/bin/bash
 export PROTON_ENABLE_NVAPI=1
 export PROTON_ENABLE_NGX_UPDATER=0
@@ -49,7 +49,7 @@ exec "$@"
 EOF
 
 # 5. hdr
-cat << 'EOF' > /usr/local/bin/hdr
+cat << 'EOF' > /usr/bin/hdr
 #!/usr/bin/bash
 export PROTON_ENABLE_WAYLAND=1
 export PROTON_ENABLE_HDR=1
@@ -57,13 +57,13 @@ exec "$@"
 EOF
 
 # 6. smooth
-cat << 'EOF' > /usr/local/bin/smooth
+cat << 'EOF' > /usr/bin/smooth
 #!/usr/bin/bash
 export NVPRESENT_ENABLE_SMOOTH_MOTION=1
 exec "$@"
 EOF
 
 echo "Setting executable permissions..."
-chmod +x /usr/local/bin/dlss /usr/local/bin/dlsstest /usr/local/bin/dlssoverride /usr/local/bin/dlssoverridetest /usr/local/bin/hdr /usr/local/bin/smooth
+chmod +x /usr/bin/dlss /usr/bin/dlsstest /usr/bin/dlssoverride /usr/bin/dlssoverridetest /usr/bin/hdr /usr/bin/smooth
 
-echo "Setup complete! The shortcuts are ready to deploy on the system."
+echo "Setup complete! The shortcuts are ready to deploy to /usr/bin/."

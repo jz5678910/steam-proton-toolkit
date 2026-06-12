@@ -6,18 +6,21 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-echo "Removing Steam UI script shortcuts from /usr/local/bin/..."
+echo "Removing Steam UI script shortcuts from /usr/bin/..."
+
+# Target directory
+BIN_DIR="/usr/bin"
 
 # Target files array
 SHORTCUTS=(dlss dlsstest dlssoverride dlssoverridetest hdr smooth)
 
 # Loop and remove files cleanly
 for cmd in "${SHORTCUTS[@]}"; do
-  if [ -f "/usr/local/bin/$cmd" ]; then
-    rm -f "/usr/local/bin/$cmd"
-    echo "Removed: /usr/local/bin/$cmd"
+  if [ -f "$BIN_DIR/$cmd" ]; then
+    rm -f "$BIN_DIR/$cmd"
+    echo "Removed: $BIN_DIR/$cmd"
   else
-    echo "Skipped: /usr/local/bin/$cmd (Not found)"
+    echo "Skipped: $BIN_DIR/$cmd (Not found)"
   fi
 done
 
@@ -25,8 +28,8 @@ echo "Verification pass:"
 # Confirm files are truly gone
 ALL_GONE=true
 for cmd in "${SHORTCUTS[@]}"; do
-  if [ -f "/usr/local/bin/$cmd" ]; then
-    echo "[!] Warning: /usr/local/bin/$cmd still exists."
+  if [ -f "$BIN_DIR/$cmd" ]; then
+    echo "[!] Warning: $BIN_DIR/$cmd still exists."
     ALL_GONE=false
   fi
 done
