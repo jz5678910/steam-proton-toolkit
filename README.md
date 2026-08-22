@@ -2,8 +2,6 @@
 
 A lightweight configuration utility script that sets up ultra-short environment commands for the Steam Launch Options UI.
 
-Tested on Fedora 44 and Anatase.
-
 ## Installation
 
 ### Standard Installation
