@@ -5,8 +5,8 @@ echo "Removing Steam UI script shortcuts from $HOME/..."
 # Target directory is now the user's home folder
 BIN_DIR="$HOME"
 
-# Target files array (updated to include gsc)
-SHORTCUTS=(dlss dlsstest dlssoverride dlssoverridetest hdr smooth gsc)
+# Target files array
+SHORTCUTS=(dlss dlsstest dlssoverride dlssoverridetest hdr smooth)
 
 # Loop and remove files cleanly
 for cmd in "${SHORTCUTS[@]}"; do
