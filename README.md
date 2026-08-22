@@ -1,13 +1,30 @@
 # Steam Proton UI Environment Shortcut Toolkit
 
-A lightweight configuration utility script that sets up ultra-short environment commands inside `/usr/bin/` for the Steam Launch Options UI.
+A lightweight configuration utility script that sets up ultra-short environment commands for the Steam Launch Options UI.
 
-Tested on Fedora 44.
+Tested on Fedora 44 and Anatase.
 
 ## Installation
-Download and run the `setup-steam-toolkit.sh` to setup your environment.
 
-To remove, download and run the `uninstall-steam-toolkit.sh`
+### Standard Installation
+
+Download and run `setup-steam-toolkit.sh` to set up your environment. This
+version installs the shortcut scripts in `/usr/bin/`.
+
+To remove the standard installation, download and run
+`uninstall-steam-toolkit.sh`.
+
+The standard setup script has been tested on Fedora 44.
+
+### Immutable Flatpak Steam Installation
+
+For immutable distributions, download and run `setup-steam-toolkit-immutable.sh`.
+This version creates the shortcuts in `$HOME/` for Flatpak Steam and applies the
+required Flatpak filesystem override for Steam to access your home directory.
+To remove the immutable installation, download and run
+`uninstall-steam-toolkit-immutable.sh`.
+
+The immutable setup script has been tested on Anatase.
 
 ## Core Commands
 
