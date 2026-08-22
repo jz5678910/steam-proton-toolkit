@@ -57,14 +57,8 @@ export NVPRESENT_ENABLE_SMOOTH_MOTION=1
 exec "$@"
 EOF
 
-# 7. gsc (Gamescope Ultrawide)
-cat << 'EOF' > "$HOME/gsc"
-#!/usr/bin/bash
-exec gamescope -W 3440 -H 1440 --hdr-enabled --adaptive-sync -f -- "$@"
-EOF
-
 echo "Setting executable permissions..."
-chmod +x "$HOME/dlss" "$HOME/dlsstest" "$HOME/dlssoverride" "$HOME/dlssoverridetest" "$HOME/hdr" "$HOME/smooth" "$HOME/gsc"
+chmod +x "$HOME/dlss" "$HOME/dlsstest" "$HOME/dlssoverride" "$HOME/dlssoverridetest" "$HOME/hdr" "$HOME/smooth"
 
 echo "Applying Flatpak override to grant Steam access to your home directory..."
 flatpak override --user --filesystem=home com.valvesoftware.Steam
